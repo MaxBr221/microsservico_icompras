@@ -7,7 +7,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="servicos" />
+        <module name="faturamento" />
+      </profile>
+      <profile name="Annotation profile for produtos" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
+        </processorPath>
+        <module name="clientes" />
+        <module name="produtos" />
       </profile>
       <profile name="Annotation profile for pedidos" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -20,16 +30,6 @@
         </processorPath>
         <module name="pedidos" />
       </profile>
-      <profile name="Annotation profile for produtos" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
-        </processorPath>
-        <module name="clientes" />
-        <module name="produtos" />
-      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="pedidos.main" target="21" />
@@ -39,11 +39,12 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="clientes" options="-parameters" />
+      <module name="faturamento" options="-parameters" />
       <module name="pedidos" options="-parameters" />
       <module name="pedidos.main" options="-parameters" />
       <module name="pedidos.test" options="-parameters" />
       <module name="produtos" options="-parameters" />
-      <module name="servicos" options="-parameters" />
+      <module name="servicos" options="" />
     </option>
   </component>
 </project>
